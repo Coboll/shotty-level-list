@@ -1,0 +1,126 @@
+.levels {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.levels * {
+    word-break: break-word;
+}
+
+.levels>div {
+    background-color: var(--secondary);
+    padding: 20px;
+    margin: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    width: 90%;
+    max-width: 1100px;
+}
+
+.vidprev {
+    width: 30%;
+    min-width: 153px;
+    max-width: 300px;
+    background-attachment: scroll;
+    background-clip: border-box;
+    background-color: #000;
+    background-origin: padding-box;
+    background-repeat: repeat;
+    background-size: cover;
+    background-position: center;
+    flex-shrink: 0;
+    cursor: pointer;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.vidprev a {
+    width: 100%;
+    height: 100%;
+}
+
+.ytimg img {
+    width: 25%;
+    filter: opacity(0.9) saturate(0);
+    transition: .25s cubic-bezier(0, 0, .2, 1);
+    min-width: 50px;
+}
+
+.ytimg:hover img {
+    filter: none;
+}
+
+.disimg video {
+    height: 100%;
+}
+
+.streamimg div {
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 15%;
+    background: #fff;
+    transform: rotate(-90deg) skewX(-30deg) scale(1, 0.866);
+    position: relative;
+    left: -9px;
+    top: -8px;
+
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5)) opacity(0.7);
+    transition: filter .25s linear;
+}
+
+.streamimg:hover div {
+    filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.5)) opacity(1);
+}
+
+.streamimg div::before {
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 15%;
+    background: #fff;
+    content: '';
+    position: absolute;
+    transform: rotate(-135deg) skewX(-45deg) scale(1.414, 0.707) translate(0, -50%);
+}
+
+.streamimg div::after {
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 15%;
+    background: #fff;
+    content: '';
+    position: absolute;
+    transform: rotate(135deg) skewY(-45deg) scale(0.707, 1.414) translate(50%);
+}
+
+.text {
+    padding: 0 0 0 15px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.levels h1 {
+    font-size: 30px;
+    text-align: center;
+    width: 90px;
+    margin-right: 20px;
+}
+
+.levels h2,
+.levels h3 {
+    margin: .5em 0;
+    font-size: 90%;
+}
+
+.levels h3 {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 80%;
+    text-indent: .2em;
+}

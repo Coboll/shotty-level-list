@@ -1,0 +1,45 @@
+.guidelines {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.guidelines * {
+    word-break: break-word;
+    text-align: center;
+}
+
+.guidelines>div {
+    background-color: var(--secondary);
+    padding: 20px 40px 0 40px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 1200px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+    margin: 10px;
+}
+
+li {
+    margin: 5px 0;
+}
+
+ol p {
+    margin: 0;
+    padding: 0 .5em 15px .5em;
+}
+
+ul {
+    padding: 0 15px
+}
