@@ -1,0 +1,109 @@
+.records {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.records * {
+    word-break: break-word;
+    text-align: center;
+}
+
+.records>div {
+    background-color: var(--secondary);
+    padding: 20px 40px 0 40px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+}
+
+table {
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    overflow-x: auto;
+    margin: 20px;
+}
+
+th {
+    height: 3em;
+    padding: 6px;
+    background-color: var(--teritary);
+}
+
+td {
+    line-height: 1.5em;
+    padding: 5px 0;
+}
+
+.recordmodal {
+    --animate-duration: 400ms;
+}
+
+.recordmodal .info {
+    width: 100%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    flex-flow: row nowrap;
+    flex-wrap: wrap;
+    padding: 20px 0;
+}
+
+.recordmodal .info span {
+    flex-grow: 1;
+    margin: 5px 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 10px;
+}
+
+.recordmodal .info h4,
+.recordmodal .info p {
+    margin: 0 15px;
+}
+
+.userrecord {
+    cursor: pointer;
+    transition: 50ms;
+}
+
+.userrecord:hover {
+    background-color: #31393f59;
+}
+
+.userrecord:active {
+    background-color: #31393f59;
+}
+
+.swal2-close:focus {
+    box-shadow: inset 0 0 0 3px rgba(0, 0, 0, 0) !important;
+}
+
+.swal2-container {
+    padding: 20px !important;
+}
+
+.recordmodal table {
+    margin: 0;
+}
+
+.recordmodal td {
+    line-height: 1.5em;
+    padding: 5px 10px;
+}
+
+.recordmodal .swal2-html-container {
+    margin: 1em 0 .3em;
+    white-space: nowrap;
+}

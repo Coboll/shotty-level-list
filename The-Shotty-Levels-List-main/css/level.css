@@ -1,0 +1,114 @@
+.level {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.level * {
+    word-break: break-word;
+    text-align: center;
+}
+
+.level > div {
+    background-color: var(--secondary);
+    padding: 20px 40px 0 40px;
+    margin: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    max-width: 900px;
+}
+
+.video {
+    height: 350px;
+    width: 100%;
+    background-color: #000;
+}
+
+.video > * {
+    height: 100%;
+    width: 100%;
+}
+
+.level .name {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+
+.level .name button {
+    background-color: transparent;
+    font-size: 200%;
+    padding: 0;
+}
+
+.level .name button:not(.disabled) {
+    transition: 100ms ease-in-out;
+}
+
+.level .name button.right:hover:not(.disabled) {
+    transform: translateX(3px)
+}
+
+.level .name button.left:hover:not(.disabled) {
+    transform: translateX(-3px)
+}
+
+.disabled {
+    filter: opacity(0.5);
+    background-color: transparent;
+    font-size: 150%;
+    cursor: not-allowed;
+    padding: 0;
+}
+
+.level .info {
+    width: 95%;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    flex-flow: row nowrap;
+    flex-wrap: wrap;
+    margin: 20px;
+}
+
+.level .info span {
+    flex-grow: 1;
+    margin: 5px 10px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 10px;
+}
+
+.level .info h4,
+.level .info p {
+    margin: 0 15px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    overflow-x: auto;
+    margin: 20px;
+}
+
+th {
+    height: 3em;
+    padding: 6px;
+    background-color: var(--teritary);
+}
+
+td {
+    line-height: 1.5em;
+    padding: 10px 0;
+}

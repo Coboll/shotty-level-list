@@ -1,0 +1,63 @@
+.topnav {
+    overflow: hidden;
+    background-color: var(--primary);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.topnav i,
+.overflowbuttons i {
+    margin-left: 3px
+}
+
+.topnav > .info > a > .icon {
+    width: auto;
+    height: 30px;
+}
+
+.topnav * {
+    display: flex;
+    align-items: center;
+}
+
+.topnav > span > *,
+.topnav > span > a,
+.topnav > span > a > * {
+    margin: 0 5px;
+}
+
+.topnav > .info > .version {
+    font-size: 15px;
+    font-style: italic;
+}
+
+.overflow button {
+    padding: 5px;
+    font-size: 20px;
+}
+
+.overflowbuttons {
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+    top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    overflow: hidden;
+    background-color: var(--primary);
+}
+
+.overflowbuttons > * {
+    text-align: right;
+    padding: 10px 20px;
+}
+
+.overflowbuttons > *:hover {
+    background-color: var(--secondary)
+}
