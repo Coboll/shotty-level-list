@@ -3,6 +3,12 @@ const d = {
     {
 
           "vids": [
+            {
+                  "user": "Andrew14916",
+                  "link": "https://www.youtube.com/watch?v=pi0lRGRfZDQ",
+                  "percent": 100,
+                  "hz": "240hz"
+              },
             
           ],
           "name": "Shotty Unknown",
@@ -366,7 +372,12 @@ const d = {
     {
 
           "vids": [
-        
+         {
+                  "user": "Andrew14916",
+                  "link": "https://www.youtube.com/watch?v=pi0lRGRfZDQ",
+                  "percent": 100,
+                  "hz": "240hz"
+              },
 
           ],
           "name": "Shotty Carcano",
