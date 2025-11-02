@@ -74,7 +74,7 @@ try {
     $('#levelpass').html(list[id].pass)
     $('#levelid').html(list[id].id)
     $('#levelqualifypointlabel').html(`Points When Completed (${list[id].percentToQualify}%)`)
-    $('#levelqualifypoint').html((list[id].percentToQualify / 100) * getpoint(id + 1))
+    $('#levelqualifypoint').html((list[id].percentToQualify / 200) * getpoint(id + 1))
     $('#levelpoint').html(getpoint(id + 1))
 
     $.get(`https://gdbrowser.com/api/level/${list[id].id}`)
@@ -274,4 +274,5 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
