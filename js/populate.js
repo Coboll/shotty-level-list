@@ -42,6 +42,7 @@ function roundnumber(num, scale) {
     }
 }
 
+//function to calculate points of a level for 100%
 function getpoint(rank) {
     if (rank > 50) {
         return 15
@@ -74,7 +75,9 @@ try {
     $('#levelpass').html(list[id].pass)
     $('#levelid').html(list[id].id)
     $('#levelqualifypointlabel').html(`Points When Completed (${list[id].percentToQualify}%)`)
+    //function to calculate points given when reaching list %
     $('#levelqualifypoint').html((list[id].percentToQualify / 200) * getpoint(id + 1))
+    
     $('#levelpoint').html(getpoint(id + 1))
 
     $.get(`https://gdbrowser.com/api/level/${list[id].id}`)
@@ -136,6 +139,7 @@ var verify_data = []
 for (var i = 0; i < list.length; i++) {
     for (var a = 0; a < list[i].vids.length; a++) {
         if (!list[i].vids[a].user == '') {
+                                                                                                                                                                         //function to calculate points given to player based on their record
             rank_data.push({ link: list[i].vids[a].link, level: list[i].name, rank: i, name: list[i].vids[a].user, point: list[i].vids[a].percent == 100 ? getpoint(i + 1) : (list[i].vids[a].percent / 200) * getpoint(i + 1), percent: list[i].vids[a].percent })
         }
     }
@@ -274,6 +278,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
