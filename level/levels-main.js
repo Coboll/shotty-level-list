@@ -31,7 +31,7 @@ const d = {
             {
                   "user": "Coboll",
                   "link": "https://youtu.be/ybddyBtm5pU",
-                  "percent": 85,
+                  "percent": 100,
                   "hz": "240hz"
               },
 
