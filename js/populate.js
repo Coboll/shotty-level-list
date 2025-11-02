@@ -136,7 +136,7 @@ var verify_data = []
 for (var i = 0; i < list.length; i++) {
     for (var a = 0; a < list[i].vids.length; a++) {
         if (!list[i].vids[a].user == '') {
-            rank_data.push({ link: list[i].vids[a].link, level: list[i].name, rank: i, name: list[i].vids[a].user, point: list[i].vids[a].percent == 100 ? getpoint(i + 1) : (list[i].vids[a].percent / 100) * getpoint(i + 1), percent: list[i].vids[a].percent })
+            rank_data.push({ link: list[i].vids[a].link, level: list[i].name, rank: i, name: list[i].vids[a].user, point: list[i].vids[a].percent == 100 ? getpoint(i + 1) : (list[i].vids[a].percent / 200) * getpoint(i + 1), percent: list[i].vids[a].percent })
         }
     }
     if (list[i].author.includes('[')) list[i].author = list[i].author.split('[')[1].replace(']', '');
@@ -274,5 +274,6 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
