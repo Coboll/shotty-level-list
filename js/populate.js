@@ -12,7 +12,7 @@ var lowestlevel = 50
 var lagacypoints = 1
 
 //how many points the top level can have; however, the last level will always have a minimum of 5 points, no matter what
-var shottypoints = 200
+var shottypoints = 300
 
 // ===============================
 // 🌍 Convert a 2-letter country code to a flag emoji
@@ -358,6 +358,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
