@@ -125,7 +125,7 @@ try {
     $('#levelvid').html(levelvideo(list[id]))
     $('#levelpass').html(list[id].pass)
     $('#levelid').html(list[id].id)
-    $('#levelqualifypointlabel').html(`Points When Completed (${list[id].percentToQualify}%)`)
+    $('#levelqualifypointlabel').html(`Shotty points (${list[id].percentToQualify}%)`)
     //function to calculate points given when reaching list %
     $('#levelqualifypoint').html(roundnumber(lowestpoints + (shottypoints - lowestpoints) * Math.pow(((lowestlevel - id) / lowestlevel), 2.5) * Math.pow(Math.E, -0.035 * (100 - list[id].percentToQualify)), 3))
     
@@ -361,6 +361,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
