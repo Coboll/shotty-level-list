@@ -111,11 +111,11 @@ try {
     $('#levelid').html(list[id].id)
     $('#levelqualifypointlabel').html(`Points When Completed (${list[id].percentToQualify}%)`)
     //function to calculate points given when reaching list %
-    $('#levelqualifypoint').html(roundnumber(Math.pow(shottypoints - (2 * i ), list[id].percentToQualify / 100) , 3))
+    $('#levelqualifypoint').html( Math.pow(shottypoints - (2 * i ), list[id].percentToQualify / 100) )
     
     $('#levelpoint').html(getpoint(id + 1))
 
-     // Fetch more details about level from GDBrowser API
+     // Fetch more details about the level from GDBrowser API
     $.get(`https://gdbrowser.com/api/level/${list[id].id}`)
         .then(level => {
             $('#leveldesc').html(level.description)
@@ -345,6 +345,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
