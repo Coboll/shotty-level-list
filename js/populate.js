@@ -1,4 +1,4 @@
-var shottypoints = 100
+var shottypoints = 300
 
 // ===============================
 // 🌍 Convert a 2-letter country code to a flag emoji
@@ -344,6 +344,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
