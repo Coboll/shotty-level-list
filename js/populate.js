@@ -1,6 +1,3 @@
-//how many points the top level can have
-var shottypoints = 100
-
 // ===============================
 // 🌍 Convert a 2-letter country code to a flag emoji
 // ===============================
@@ -71,11 +68,11 @@ function roundnumber(num, scale) {
 // ===============================
 function getpoint(rank) {
     // Levels below rank 50 are capped at 15 points
-    if (rank > 50) {
-        return 15
+    if (rank > 150) {
+        return 1
         // Formula for higher-ranked levels
     } else {
-        return roundnumber((shottypoints / Math.sqrt(((rank - 1) / 50) + 0.444444)) - 50, 3)
+        return roundnumber(5 + (200 - 5) * mathpow(((150 - i) / 150), 2.5) , 3)
     }
 }
 
@@ -345,6 +342,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
