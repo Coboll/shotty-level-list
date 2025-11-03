@@ -228,7 +228,7 @@ result_rank.sort((a, b) => b.point - a.point)
 
 record_list = []
 for (let i = 0; i < result_rank.length; i++) {
-    record_list.push(`<tr userid="${i}" class="userrecord"><td title="${country[result_rank[i].name]}" class="country">${getflag(country[result_rank[i].name])}</td><td class="rank">${i + 1}</td><td>${result_rank[i].name}</td><td>${roundnumber(result_rank[i].point, 3)}</td></tr>`)
+    record_list.push(`<tr userid="${i}" class="userrecord"><td title="${country[result_rank[i].name]}" class="country">${getflag(country[result_rank[i].name])}</td><td class="rank">${i + 1}</td><td>${result_rank[i].name}</td><td>${roundnumber(result_rank[i].point, 2)}</td></tr>`)
 }
 
 $('#recordslist').html(record_list.toString().replace(/,/g, ''))
@@ -277,7 +277,7 @@ $('.userrecord').on('click', function () {
         <div class="info">
             <span>
                 <h4>Score</h4>
-                <p>${roundnumber(result_rank[$(this).attr('userid')].point, 3)}</p>
+                <p>${roundnumber(result_rank[$(this).attr('userid')].point, 2)}</p>
             </span>
             <span>
                 <h4>Hardest</h4>
@@ -342,6 +342,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
