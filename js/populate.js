@@ -188,7 +188,7 @@ for (var i = 0; i < list.length; i++) {
         // Calculate points per record
         if (!list[i].vids[a].user == '') {
                                                                                                                                                                          //function to calculate points given to player based on their record
-            rank_data.push({ link: list[i].vids[a].link, level: list[i].name, rank: i, name: list[i].vids[a].user, point: list[i].vids[a].percent == 100 ? getpoint(i + 1) : (list[i].vids[a].percent / 125 ) * getpoint(i + 1), percent: list[i].vids[a].percent })
+            rank_data.push({ link: list[i].vids[a].link, level: list[i].name, rank: i, name: list[i].vids[a].user, point: list[i].vids[a].percent == 100 ? getpoint(i + 1) : (125 / list[i].vids[a].percent ) * getpoint(i + 1), percent: list[i].vids[a].percent })
         }
     }
     // Extract verifier name and award verification points
@@ -342,6 +342,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
