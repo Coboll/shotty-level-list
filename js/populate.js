@@ -119,7 +119,7 @@ try {
     // Get base URL for navigation buttons
     url = $(location).attr('href').split('?')[0]
     
-    // Populate level info
+   // Populate level info
     $('#levelname').html(`#${id + 1} - ${list[id].name}`)
     $('#levelauthor').html(`by ${list[id].author.replace(/ \[(.*)\]/gim, ', verified by$1')}`)
     $('#levelvid').html(levelvideo(list[id]))
@@ -127,10 +127,7 @@ try {
     $('#levelid').html(list[id].id)
     $('#levelqualifypointlabel').html(`Shotty points (${list[id].percentToQualify}%)`)
     //function to calculate points given when reaching list %
-    $('#levelqualifypoint').html(if (rank > lowestlevel) {return lagacypoints } else { return roundnumber(lowestpoints + (shottypoints - lowestpoints) * Math.pow(((lowestlevel - id) / lowestlevel), 2.5) * Math.pow(Math.E, -0.035 * (100 - list[id].percentToQualify)), 3) })
-
-                                    // Formula for higher-ranked levels
- 
+    $('#levelqualifypoint').html(roundnumber(lowestpoints + (shottypoints - lowestpoints) * Math.pow(((lowestlevel - id) / lowestlevel), 2.5) * Math.pow(Math.E, -0.035 * (100 - list[id].percentToQualify)), 3))
     
     $('#levelpoint').html(getpoint(id + 1))
 
@@ -364,6 +361,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
