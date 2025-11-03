@@ -520,7 +520,19 @@ const d = {
           "percentToQualify": 59,
           "verificationVid": "https://www.youtube.com/watch?v=j4Wel97XkYE",
       },
-    
+    {
+
+          "vids": [
+            
+          ],
+          "name": "Shotty Exens Limit",
+          "author": "GAY",
+          "more": "None",
+          "id": 127251138,
+          "pass": "Free copy",
+          "percentToQualify": 66,
+          "verificationVid": "https://youtu.be/PrcpmTySXD0",
+      },
     {
 
           "vids": [
