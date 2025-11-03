@@ -75,7 +75,7 @@ function getpoint(rank) {
         return 15
         // Formula for higher-ranked levels
     } else {
-        return roundnumber(5 + (200 - 5) * Math.pow(((150 - (rank-1)) / 150), 2.5), 3)
+        return roundnumber(5 + (200 - 5) * Math.pow(((150 - (rank-1)) / 150), 2.5) * Math.pow(Math.E, -0.035 * (100 - 100)), 3)
     }
 }
 
@@ -345,6 +345,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
