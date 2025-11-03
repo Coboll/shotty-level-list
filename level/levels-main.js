@@ -528,10 +528,10 @@ const d = {
           "name": "Shotty Exens Limit",
           "author": "GAY",
           "more": "None",
-          "id": 127251138,
+          "id": 127493342,
           "pass": "Free copy",
-          "percentToQualify": 66,
-          "verificationVid": "https://youtu.be/PrcpmTySXD0",
+          "percentToQualify": 70,
+          "verificationVid": "https://www.youtube.com/watch?v=JHgUgIf1f9s",
       },
     {
 
