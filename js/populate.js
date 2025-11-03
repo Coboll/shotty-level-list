@@ -12,7 +12,7 @@ var lowestlevel = 50
 var lagacypoints = 1
 
 //how many points the top level can have; however, the last level will always have a minimum of 5 points, no matter what
-var shottypoints = 300
+var shottypoints = 200
 
 // ===============================
 // 🌍 Convert a 2-letter country code to a flag emoji
@@ -84,11 +84,11 @@ function roundnumber(num, scale) {
 // ===============================
 function getpoint(rank) {
     // Levels below rank 50 are capped at 15 points
-    if (rank > 50) {
-        return 15
+    if (rank > lowestlevel) {
+        return lagacypoints
         // Formula for higher-ranked levels
     } else {
-        return roundnumber(5 + (200 - 5) * Math.pow(((150 - (rank-1)) / 150), 2.5) * Math.pow(Math.E, -0.035 * (100 - 100)), 3)
+        return roundnumber(5 + (shottypoints - 5) * Math.pow(((150 - (rank-1)) / 150), 2.5) * Math.pow(Math.E, -0.035 * (100 - 100)), 3)
     }
 }
 
@@ -124,7 +124,7 @@ try {
     $('#levelid').html(list[id].id)
     $('#levelqualifypointlabel').html(`Points When Completed (${list[id].percentToQualify}%)`)
     //function to calculate points given when reaching list %
-    $('#levelqualifypoint').html(roundnumber(5 + (200 - 5) * Math.pow(((150 - id) / 150), 2.5) * Math.pow(Math.E, -0.035 * (100 - list[id].percentToQualify)), 3))
+    $('#levelqualifypoint').html(roundnumber(5 + (shottypoints - 5) * Math.pow(((150 - id) / 150), 2.5) * Math.pow(Math.E, -0.035 * (100 - list[id].percentToQualify)), 3))
     
     $('#levelpoint').html(getpoint(id + 1))
 
@@ -204,7 +204,7 @@ for (var i = 0; i < list.length; i++) {
         // Calculate points per record
         if (!list[i].vids[a].user == '') {
                                                                                                                                                                          //function to calculate points given to player based on their record
-            rank_data.push({ link: list[i].vids[a].link, level: list[i].name, rank: i, name: list[i].vids[a].user, point: list[i].vids[a].percent == 100 ? getpoint(i + 1) : roundnumber(5 + (200 - 5) * Math.pow(((150 - i) / 150), 2.5) * Math.pow(Math.E, -0.035 * (100 - list[i].vids[a].percent)), 3), percent: list[i].vids[a].percent })
+            rank_data.push({ link: list[i].vids[a].link, level: list[i].name, rank: i, name: list[i].vids[a].user, point: list[i].vids[a].percent == 100 ? getpoint(i + 1) : roundnumber(5 + (shottypoints - 5) * Math.pow(((150 - i) / 150), 2.5) * Math.pow(Math.E, -0.035 * (100 - list[i].vids[a].percent)), 3), percent: list[i].vids[a].percent })
         }
     }
     // Extract verifier name and award verification points
@@ -358,6 +358,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
