@@ -1,3 +1,5 @@
+var shottypoints = 100
+
 // ===============================
 // 🌍 Convert a 2-letter country code to a flag emoji
 // ===============================
@@ -72,7 +74,7 @@ function getpoint(rank) {
         return 15
         // Formula for higher-ranked levels
     } else {
-        return roundnumber((100 / Math.sqrt(((rank - 1) / 50) + 0.444444)) - 50, 3)
+        return roundnumber((shottypoints / Math.sqrt(((rank - 1) / 50) + 0.444444)) - 50, 3)
     }
 }
 
@@ -188,7 +190,7 @@ for (var i = 0; i < list.length; i++) {
         // Calculate points per record
         if (!list[i].vids[a].user == '') {
                                                                                                                                                                          //function to calculate points given to player based on their record
-            rank_data.push({ link: list[i].vids[a].link, level: list[i].name, rank: i, name: list[i].vids[a].user, point: list[i].vids[a].percent == 100 ? getpoint(i + 1) : roundnumber(Math.pow(getpoint(i + 1) - (2 * i ), list[i].vids[a].percent / 100) - 15, 3), percent: list[i].vids[a].percent })
+            rank_data.push({ link: list[i].vids[a].link, level: list[i].name, rank: i, name: list[i].vids[a].user, point: list[i].vids[a].percent == 100 ? getpoint(i + 1) : roundnumber(Math.pow(shottypoints - (2 * i ), list[i].vids[a].percent / 100) , 3), percent: list[i].vids[a].percent })
         }
     }
     // Extract verifier name and award verification points
@@ -342,6 +344,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
