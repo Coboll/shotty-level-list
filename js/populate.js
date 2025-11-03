@@ -72,7 +72,7 @@ function getpoint(rank) {
         return 15
         // Formula for higher-ranked levels
     } else {
-        return roundnumber((100 / Math.sqrt(((rank - 1) / 50) + 0.444444)) - 50, 3)
+        return roundnumber((100 / Math.sqrt(((rank - 1) / 50) + 0.444444)) - 50, 2)
     }
 }
 
@@ -342,6 +342,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
