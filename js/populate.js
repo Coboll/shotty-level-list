@@ -81,7 +81,7 @@ function getpoint(rank) {
 // ===============================
 for (let i = 0; i < list.length; i++) {
     // Append level HTML with video thumbnail and info
-    $('.levels').append(`<div><h1>#${i + 2}</h1>${listvideo(list[i])}<a class="text" href="./level/?${i + 1}"><h2>${list[i].name}</h2><h3>${list[i].author}</h3></a></div>`)
+    $('.levels').append(`<div><h1>#${i + 1}</h1>${listvideo(list[i])}<a class="text" href="./level/?${i + 1}"><h2>${list[i].name}</h2><h3>${list[i].author}</h3></a></div>`)
 }
 
 windowcheck() // Recalculate layout or responsiveness (custom function)
@@ -342,6 +342,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
