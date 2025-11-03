@@ -6,13 +6,13 @@
 
 //changes what the lowest level on the list can be that still has variable points given based on percentage; any level lower than this will only be worth 5 points or 0. Also, the larger the number, the smaller the difference between-
 //levels points-wise.
-var lowestlevel = 50
+var lowestlevel = 5
 
 //changes how many points legacy levels give, this can be 5 points or lower (yes, it can be 0), just remember the level can only have a 100% completion or the point system won't work
 var lagacypoints = 1
 
 //how many points the top level can have; however, the last level will always have a minimum of 5 points, no matter what
-var shottypoints = 300
+var shottypoints = 200
 
 // ===============================
 // 🌍 Convert a 2-letter country code to a flag emoji
@@ -358,6 +358,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
