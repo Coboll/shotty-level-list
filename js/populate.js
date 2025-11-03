@@ -1,114 +1,123 @@
 // ===============================
-// 🏳️ FLAG + UTILITY FUNCTIONS
+// 🌍 Convert a 2-letter country code to a flag emoji
 // ===============================
-
-// Converts a 2-letter country code (like "us") into a flag emoji (🇺🇸)
 function getflag(countryCode) {
+    // If input is null or undefined, return empty string
     if (countryCode == null) return ''
+    // Converts letters to Unicode regional indicators to form flag emojis
     return countryCode.toUpperCase().replace(/./g, char =>
-        String.fromCodePoint(127397 + char.charCodeAt()) // offset to regional indicator symbols
+        String.fromCodePoint(127397 + char.charCodeAt())
     );
 }
 
-// Rounds a number to a specified number of decimal places, handling scientific notation
+
+// ===============================
+// 🎥 Generate preview thumbnail links for videos
+// ===============================
+function listvideo(a) {
+    // YouTube video preview
+    if (a.verificationVid.startsWith('https://youtu') || a.verificationVid.startsWith('https://www.youtu')) {
+        return `<a class="ytimg vidprev vidratio"
+                    style="background-image: url(https://i.ytimg.com/vi/${a.verificationVid
+                        .replace(/www\.youtube\.com\/watch\?v=/gi, '')
+                        .replace(/\/youtu\.be/gi, '')
+                        .replace(/&t=(.*)s/gi, '')
+                        .replace(/https:\/\//gi, '')}/mqdefault.jpg);"
+                    href="https://www.youtube.com/watch?v=${a.verificationVid
+                        .replace(/www\.youtube\.com\/watch\?v=/gi, '')
+                        .replace(/\/youtu\.be/gi, '')
+                        .replace(/&t=d+s/gi, '')
+                        .replace(/https:\/\//gi, '')}"
+                    target="_blank">
+                    <img src="./src/youtube.png">
+                </a>`
+    }
+    // Streamable preview
+    else if (a.verificationVid.startsWith('https://streamable.com')) {
+        return `<a class="streamimg vidprev vidratio"
+                    style="background-image: url('http://cdn-cf-east.streamable.com/image/${a.verificationVid
+                        .replace(/streamable\.com\//gi, '')
+                        .replace(/https:\/\//gi, '')}.jpg');"
+                    href="${a.verificationVid}" target="_blank"><div></div></a>`
+    }
+    // Discord CDN direct video preview
+    else {
+        return `<a class="disimg vidprev vidratio"
+                    href="${a.verificationVid.replace(/cdn\.(.*)\.com/gi, 'media.$1.net')}"
+                    target="_blank">
+                    <video src="${a.verificationVid.replace(/cdn\.(.*)\.com/gi, 'media.$1.net')}"></video>
+                </a>`
+    }
+}
+
+
+// ===============================
+// 🎬 Generate embedded playable videos for level pages
+// ===============================
+function levelvideo(a) {
+    // YouTube embed
+    if (a.verificationVid.startsWith('https://youtu') || a.verificationVid.startsWith('https://www.youtu')) {
+        return `<iframe src="https://www.youtube.com/embed/${a.verificationVid
+            .replace(/www\.youtube\.com\/watch\?v=/gi, '')
+            .replace(/\/youtu\.be/gi, '')
+            .replace(/&t=(.*)s/gi, '?start=$1')
+            .replace(/https:\/\//gi, '')}"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>`
+    }
+    // Streamable embed
+    else if (a.verificationVid.startsWith('https://streamable.com')) {
+        return `<iframe src="https://streamable.com/e/${a.verificationVid
+            .replace(/streamable\.com\//gi, '')
+            .replace(/https:\/\//gi, '')}" frameborder="0" allowfullscreen></iframe>`
+    }
+    // Discord video
+    else {
+        return `<video controls src="${a.verificationVid.replace(/cdn\.(.*)\.com/gi, 'media.$1.net')}"></video>`
+    }
+}
+
+
+// ===============================
+// 🔢 Utility: round a number to given decimal places
+// Handles both normal and scientific notation
+// ===============================
 function roundnumber(num, scale) {
     if (!("" + num).includes("e")) {
-        // Standard rounding for normal numbers
+        // Regular case
         return +(Math.round(num + "e+" + scale) + "e-" + scale)
     } else {
-        // Handle numbers in exponential form (e.g., 1e-7)
+        // Handles scientific notation
         var arr = ("" + num).split("e")
         var sig = ""
-        if (+arr[1] + scale > 0) sig = "+"
+        if (+arr[1] + scale > 0) {
+            sig = "+"
+        }
         return +(Math.round(+arr[0] + "e" + sig + (+arr[1] + scale)) + "e-" + scale)
     }
 }
 
-// Calculates the point value of a level given its rank position
+
+// ===============================
+// ⭐ Calculate points given to a level based on its rank
+// ===============================
 function getpoint(rank) {
     if (rank > 50) {
-        return 15 // Ranks past 50 have a flat 15 points
+        // Levels below rank 50 are capped at 15 points
+        return 15
     } else {
-        // Uses a custom scaling formula, rounded to 3 decimals
+        // Formula for higher ranked levels
         return roundnumber((100 / Math.sqrt(((rank - 1) / 50) + 0.444444)) - 50, 3)
     }
 }
 
-// ===============================
-// 🎥 VIDEO DISPLAY HELPERS
-// ===============================
-
-// Creates a clickable video thumbnail for a verification video
-function listvideo(a) {
-    if (a.verificationVid.startsWith('https://youtu') || a.verificationVid.startsWith('https://www.youtu')) {
-        // For YouTube links, generate a thumbnail image from i.ytimg.com
-        return `<a class="ytimg vidprev vidratio" 
-            style="background-image: url(https://i.ytimg.com/vi/${
-                a.verificationVid
-                    .replace(/www\.youtube\.com\/watch\?v=/gi, '')
-                    .replace(/\/youtu\.be/gi, '')
-                    .replace(/&t=(.*)s/gi, '')
-                    .replace(/https:\/\//gi, '')
-            }/mqdefault.jpg);" 
-            href="https://www.youtube.com/watch?v=${
-                a.verificationVid
-                    .replace(/www\.youtube\.com\/watch\?v=/gi, '')
-                    .replace(/\/youtu\.be/gi, '')
-                    .replace(/&t=d+s/gi, '')
-                    .replace(/https:\/\//gi, '')
-            }" target="_blank">
-            <img src="./src/youtube.png"></a>`
-    }
-    else if (a.verificationVid.startsWith('https://streamable.com')) {
-        // For Streamable videos, use their static .jpg preview
-        return `<a class="streamimg vidprev vidratio" 
-            style="background-image: url('http://cdn-cf-east.streamable.com/image/${
-                a.verificationVid.replace(/streamable\.com\//gi, '').replace(/https:\/\//gi, '')
-            }.jpg');" 
-            href="${a.verificationVid}" target="_blank"><div></div></a>`
-    }
-    else {
-        // For Discord CDN links or others, directly embed the video
-        return `<a class="disimg vidprev vidratio" 
-            href="${a.verificationVid.replace(/cdn\.(.*)\.com/gi, 'media.$1.net')}" target="_blank">
-            <video src="${a.verificationVid.replace(/cdn\.(.*)\.com/gi, 'media.$1.net')}"></video></a>`
-    }
-}
-
-// Creates an embedded video player (iframe/video) for a level's verification video
-function levelvideo(a) {
-    if (a.verificationVid.startsWith('https://youtu') || a.verificationVid.startsWith('https://www.youtu')) {
-        // YouTube embedded player
-        return `<iframe src="https://www.youtube.com/embed/${
-            a.verificationVid
-                .replace(/www\.youtube\.com\/watch\?v=/gi, '')
-                .replace(/\/youtu\.be/gi, '')
-                .replace(/&t=(.*)s/gi, '?start=$1')
-                .replace(/https:\/\//gi, '')
-        }" title="YouTube video player" frameborder="0" 
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-        allowfullscreen></iframe>`
-    }
-    else if (a.verificationVid.startsWith('https://streamable.com')) {
-        // Streamable embedded player
-        return `<iframe src="https://streamable.com/e/${
-            a.verificationVid.replace(/streamable\.com\//gi, '').replace(/https:\/\//gi, '')
-        }" frameborder="0" allowfullscreen></iframe>`
-    }
-    else {
-        // Discord or other video source
-        return `<video controls src="${
-            a.verificationVid.replace(/cdn\.(.*)\.com/gi, 'media.$1.net')
-        }"></video>`
-    }
-}
 
 // ===============================
-// 🧱 LEVEL LIST RENDERING
+// 🧱 Render all levels on the main list
 // ===============================
-
-// Loop through all levels and display them in the main page list
 for (let i = 0; i < list.length; i++) {
+    // Append level HTML with video thumbnail and info
     $('.levels').append(`
         <div>
             <h1>#${i + 1}</h1>
@@ -120,14 +129,12 @@ for (let i = 0; i < list.length; i++) {
         </div>`)
 }
 
-// Run a function (probably resizes or checks window layout)
-windowcheck()
+windowcheck() // Recalculate layout or responsiveness (custom function)
+
 
 // ===============================
-// 🔍 LEVEL PAGE LOGIC
+// 🔍 Check URL for ?id to determine selected level page
 // ===============================
-
-// Parse URL parameters to get level ID (?1, ?2, etc.)
 for (let i = 0; i < location.search.substring(1).split('&').length; i++) {
     if (!isNaN(location.search.substring(1).split('&')[i])) {
         id = location.search.substring(1).split('&')[i].replace(/^[0]+/g, "") - 1
@@ -135,28 +142,27 @@ for (let i = 0; i < location.search.substring(1).split('&').length; i++) {
 }
 
 try {
-    // Base URL for navigation
+    // Get base URL for navigation buttons
     url = $(location).attr('href').split('?')[0]
 
-    // Populate level information
+    // Populate level info
     $('#levelname').html(`#${id + 1} - ${list[id].name}`)
     $('#levelauthor').html(`by ${list[id].author.replace(/ \[(.*)\]/gim, ', verified by$1')}`)
     $('#levelvid').html(levelvideo(list[id]))
     $('#levelpass').html(list[id].pass)
     $('#levelid').html(list[id].id)
     $('#levelqualifypointlabel').html(`Points When Completed (${list[id].percentToQualify}%)`)
-
-    // Calculate qualifying and total points
     $('#levelqualifypoint').html((list[id].percentToQualify / 200) * getpoint(id + 1))
     $('#levelpoint').html(getpoint(id + 1))
 
-    // Fetch additional level info from GDBrowser API
+    // Fetch more details about level from GDBrowser API
     $.get(`https://gdbrowser.com/api/level/${list[id].id}`)
         .then(level => {
             $('#leveldesc').html(level.description)
             $('#levellen').html(level.length)
             $('#levelobj').html(level.objects)
             $('#levelsong').html(`<p>${level.songName} by ${level.songAuthor} (${!Number.isInteger(level.songID) ? '' : 'ID '}${level.songID})${!Number.isInteger(level.songID) ? '' : ' <i class="bi bi-box-arrow-up-right"></i></p>'}`)
+            // Make Newgrounds song clickable if ID exists
             if (!Number.isInteger(level.songID)) {
                 $('#levelsong').toggleClass('hoverlink')
             } else {
@@ -164,11 +170,9 @@ try {
             }
         })
 
-    // Disable navigation buttons if at start or end
+    // Disable navigation arrows when at edges
     if (id == 0) $('.left').toggleClass('disabled')
     if (id == list.length - 1) $('.right').toggleClass('disabled')
-
-    // Hide extra points section if qualification = 100%
     if (list[id].percentToQualify == 100) $('#otherpoint').hide()
 
     // Navigation buttons
@@ -181,21 +185,19 @@ try {
         $(location).attr('href', `${url}?${id + 2}`)
     })
 
-    // ===============================
-    // 🧍 PLAYER RECORDS TABLE
-    // ===============================
+    // Build record list table
     let records = []
     for (let i = 0; i < list[id].vids.length; i++) {
-        // Detect video source type
+        // Detect source type (YouTube, Discord, etc.)
         if (list[id].vids[i].link.includes('youtu')) source = 'YouTube'
         else if (list[id].vids[i].link.includes('discordapp')) source = 'Discord'
         else source = 'Video'
 
-        // Bold text if 100% completion
+        // Bold full completions (100%)
         if (list[id].vids[i].percent == 100) var bold = 'font-weight: bold;'
         else var bold = ''
 
-        // Build record row HTML
+        // Create record table row
         records.push(`
             <tr style="${bold}">
                 <td title="${country[list[id].vids[i].user]}" class="country">${getflag(country[list[id].vids[i].user])}</td>
@@ -206,12 +208,10 @@ try {
             </tr>`)
     }
 
-    // Display record stats
+    // Inject record data into DOM
     $('#levelrecordspercent').html(`${list[id].percentToQualify}% or better required to qualify`)
     $('#levelrecordsregistered').html(`${list[id].vids.length} records registered`)
     $('#levelrecordslist').html(records.toString().replace(/,/g, ''))
-
-    // Hide record section if no entries
     if (records.length == 0) $('#levelrecords').hide()
 
     windowcheck()
@@ -220,19 +220,18 @@ try {
     console.error(e)
 }
 
-// ===============================
-// 🧮 RANKING & POINTS AGGREGATION
-// ===============================
 
+// ===============================
+// 📊 Rank and verification data aggregation
+// ===============================
 var rank_data = []
 var verify_data = []
 
-// Loop through levels and collect both record and verification data
 for (var i = 0; i < list.length; i++) {
     for (var a = 0; a < list[i].vids.length; a++) {
-        // BUG NOTE: This condition should probably be (list[i].vids[a].user != '')
+        // Skip empty user fields
         if (!list[i].vids[a].user == '') {
-            // Calculate player’s points based on percent or full completion
+            // Calculate points per record
             rank_data.push({
                 link: list[i].vids[a].link,
                 level: list[i].name,
@@ -243,25 +242,22 @@ for (var i = 0; i < list.length; i++) {
             })
         }
     }
-    // Collect data about verifiers
-    if (list[i].author.includes('[')) list[i].author = list[i].author.split('[')[1].replace(']', '');
-    verify_data.push({
-        level: list[i].name,
-        rank: i,
-        name: list[i].author,
-        link: list[i].verificationVid,
-        point: getpoint(i + 1)
-    })
+
+    // Extract verifier name and award verification points
+    if (list[i].author.includes('[')) list[i].author = list[i].author.split('[')[1].replace(']', '')
+    verify_data.push({ level: list[i].name, rank: i, name: list[i].author, link: list[i].verificationVid, point: getpoint(i + 1) })
 }
 
-// Combine records by player, summing their total points
+
+// ===============================
+// 🧮 Combine and total player points
+// ===============================
 const result_rank = Object.values(rank_data.reduce((r, { name, point }) => {
     if (!r[name]) r[name] = { name, point }
     else r[name].point += point
     return r
 }, {})).sort((a, b) => b.point - a.point)
 
-// Combine verifier data
 const result_verify = Object.values(verify_data.reduce((r, { name, point }) => {
     if (!r[name]) r[name] = { name, point }
     else r[name].point += point
@@ -277,11 +273,12 @@ for (let i = 0; i < result_rank.length; i++) {
         }
     }
 }
-
-// Sort players by total points
 result_rank.sort((a, b) => b.point - a.point)
 
-// Render leaderboard table
+
+// ===============================
+// 🧾 Build player leaderboard table
+// ===============================
 record_list = []
 for (let i = 0; i < result_rank.length; i++) {
     record_list.push(`
@@ -294,15 +291,15 @@ for (let i = 0; i < result_rank.length; i++) {
 }
 $('#recordslist').html(record_list.toString().replace(/,/g, ''))
 
-// ===============================
-// 🧾 PLAYER DETAIL POPUP (MODAL)
-// ===============================
 
+// ===============================
+// 🪪 Player record modal popup (SweetAlert)
+// ===============================
 $('.userrecord').on('click', function () {
     user_list = []
     hardestsearch = true
 
-    // Find all levels completed by this player
+    // Find player's records
     for (let i = 0; i < rank_data.length; i++) {
         if (rank_data[i].name == result_rank[$(this).attr('userid')].name) {
             if (rank_data[i].link.includes('youtu')) source = 'YouTube'
@@ -311,45 +308,29 @@ $('.userrecord').on('click', function () {
 
             if (rank_data[i].rank < 50) var bold = 'font-weight: bold;'
             else var bold = ''
-
-            user_list.push(`
-                <tr style="${bold}">
-                    <td class="rank">${rank_data[i].rank + 1}</td>
-                    <td><a class="hoverlink level" href="../level?${rank_data[i].rank + 1}" >${rank_data[i].level}</a></td>
-                    <td class="points">${rank_data[i].point}</td>
-                    <td><a class="hoverlink" href="${rank_data[i].link.replace('cdn.discordapp.com', 'media.discordapp.net')}" target="_blank">${source} <i class="bi bi-box-arrow-up-right"></i></a></td>
-                </tr>`)
-
+            user_list.push(`<tr style="${bold}"><td class="rank">${rank_data[i].rank + 1}</td><td><a class="hoverlink level" href="../level?${rank_data[i].rank + 1}" >${rank_data[i].level}</a></td><td class="points">${rank_data[i].point}</td><td><a class="hoverlink" href="${rank_data[i].link.replace('cdn.discordapp.com', 'media.discordapp.net')}" target="_blank">${source} <i class="bi bi-box-arrow-up-right"></i></a></tr>`)
             if (hardestsearch && rank_data[i].percent == 100) hardest = rank_data[i]
             hardestsearch = false
         }
     }
 
-    // Find levels verified by this player
+    // Find player verifications
     user_verify = []
     for (let i = 0; i < verify_data.length; i++) {
         if (verify_data[i].name == result_rank[$(this).attr('userid')].name) {
             if (verify_data[i].link.includes('youtu')) source = 'YouTube'
             else if (verify_data[i].link.includes('discordapp')) source = 'Discord'
             else source = 'Video'
-
             if (verify_data[i].rank < 50) var bold = 'font-weight: bold;'
             else var bold = ''
-
-            user_verify.push(`
-                <tr style="${bold}">
-                    <td class="rank">${verify_data[i].rank + 1}</td>
-                    <td><a class="hoverlink level" href="../level?${verify_data[i].rank + 1}" >${verify_data[i].level}</a></td>
-                    <td class="points">${verify_data[i].point}</td>
-                    <td><a class="hoverlink" href="${verify_data[i].link.replace('cdn.discordapp.com', 'media.discordapp.net')}" target="_blank">${source} <i class="bi bi-box-arrow-up-right"></i></a></td>
-                </tr>`)
+            user_verify.push(`<tr style="${bold}"><td class="rank">${verify_data[i].rank + 1}</td><td><a class="hoverlink level" href="../level?${verify_data[i].rank + 1}" >${verify_data[i].level}</a></td><td class="points">${verify_data[i].point}</td><td><a class="hoverlink" href="${verify_data[i].link.replace('cdn.discordapp.com', 'media.discordapp.net')}" target="_blank">${source} <i class="bi bi-box-arrow-up-right"></i></a></tr>`)
         }
     }
 
-    // Disable background scroll during modal
+    // Prevent scroll while modal is open
     $('body').css('overflow', 'hidden')
 
-    // Display SweetAlert modal with player stats and record lists
+    // SweetAlert modal for player stats
     Swal.fire({
         title: `<span title="${country[result_rank[$(this).attr('userid')].name]}">${getflag(country[result_rank[$(this).attr('userid')].name])}</span> ${result_rank[$(this).attr('userid')].name}`,
         html: `
@@ -364,8 +345,35 @@ $('.userrecord').on('click', function () {
         <h2>Records</h2>
         <table>
             <thead><tr><th class="rank">Rank</th><th>Level</th><th class="points">Points</th><th>Video</th></tr></thead>
-            <tbody>${user
-```
+            <tbody>${user_list.toString().replace(/,/g, '')}</tbody>
+        </table>
+        <divider class="verifications"></divider>
+        <h2 class="verifications">Verifications</h2>
+        <table class="verifications">
+            <thead><tr><th class="rank">Rank</th><th>Level</th><th class="points">Points</th><th>Video</th></tr></thead>
+            <tbody>${user_verify.toString().replace(/,/g, '')}</tbody>
+        </table>`,
+        showConfirmButton: false,
+        showCloseButton: true,
+        scrollbarPadding: false,
+        background: 'var(--secondary)',
+        color: 'var(--text)',
+        customClass: '
+        width: '700px',
+        padding: '10px',
+        showClass: {
+            popup: 'animate__animated animate__fadeInLeft'
+        },
+        hideClass: {
+            popup: 'animate__animated animate__fadeOutLeft'
+        }
+    }).then((res) => {
+        if (res.isDismissed) $('body').css('overflow', 'auto')
+    })
+    if (user_verify.length == 0) $('.verifications').hide()
+    windowcheck()
+})
+
 
 
 
