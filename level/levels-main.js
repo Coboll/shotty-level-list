@@ -455,7 +455,7 @@ const d = {
 
           ],
           "name": "Shotty Cognition",
-          "author": "RazoSlayer",
+          "author": "Giooooo",
           "more": "No copy",
           "id": 82933815,
           "pass": "None",
@@ -677,7 +677,8 @@ const d = {
       "Toonm": "US",
       "Andrew14916": "GB",
       "GAY": "CA",
-    "Basil": "N/A",
+      "Basil": "N/A",
+      "Giooooo": "US",
   }
 
 }
