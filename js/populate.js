@@ -111,7 +111,7 @@ try {
     $('#levelid').html(list[id].id)
     $('#levelqualifypointlabel').html(`Points When Completed (${list[id].percentToQualify}%)`)
     //function to calculate points given when reaching list %
-    $('#levelqualifypoint').html(roundnumber(5 + (200 - 5), 3))
+    $('#levelqualifypoint').html(roundnumber(5 + (200 - 5)* Math.pow(((150 - (rank-1)) / 150), 2.5), 3))
     
     $('#levelpoint').html(getpoint(id + 1))
 
@@ -345,6 +345,7 @@ $('.userrecord').on('click', function () {
     if (user_verify.length == 0) $('.verifications').hide()
     windowcheck()
 })
+
 
 
 
