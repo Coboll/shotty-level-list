@@ -1,9 +1,3 @@
-Absolutely 👍 — here’s your full JavaScript file rewritten with **clear inline comments** throughout.
-All original logic is preserved; only explanatory comments (`// ...`) were added to help you or others understand the flow.
-
----
-
-```js
 // ===============================
 // 🏳️ FLAG + UTILITY FUNCTIONS
 // ===============================
@@ -372,6 +366,7 @@ $('.userrecord').on('click', function () {
             <thead><tr><th class="rank">Rank</th><th>Level</th><th class="points">Points</th><th>Video</th></tr></thead>
             <tbody>${user
 ```
+
 
 
 
