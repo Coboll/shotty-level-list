@@ -108,7 +108,19 @@ const d = {
           "percentToQualify": 47,
           "verificationVid": "https://youtu.be/8zqAkSY88YQ",
       },
+    {
 
+          "vids": [
+            
+          ],
+          "name": "Shotty Hard Mashine",
+          "author": "GAY",
+          "more": "None",
+          "id": 129002510,
+          "pass": "Free copy",
+          "percentToQualify": 65,
+          "verificationVid": "https://medal.tv/games/geometry-dash/clips/lDRY9NsMkIWbhqbbC?invite=cr-MSxWaGUsNDg0MjMxNDM5&v=172",
+      },
       {
 
           "vids": [
@@ -520,6 +532,7 @@ const d = {
           "percentToQualify": 59,
           "verificationVid": "https://www.youtube.com/watch?v=j4Wel97XkYE",
       },
+    
     {
 
           "vids": [
@@ -533,46 +546,7 @@ const d = {
           "percentToQualify": 70,
           "verificationVid": "https://www.youtube.com/watch?v=JHgUgIf1f9s",
       },
-    {
-
-          "vids": [
-           {
-                  "user": "Sno_fi",
-                  "link": "https://www.youtube.com/watch?v=fx2Z5ZD_Rbo",
-                  "percent": 100,
-                  "hz": "360hz"
-              },
-            {
-                  "user": "Coboll",
-                  "link": "https://www.youtube.com/watch?v=fx2Z5ZD_Rbo",
-                  "percent": 100,
-                  "hz": "360hz"
-              },
-            {
-                  "user": "Andrew14916",
-                  "link": "https://youtu.be/oQi6KbHxDEE",
-                  "percent": 100,
-                  "hz": "360hz"
-              },
-             {
-                  "user": "Darksonic777",
-                  "link": "https://www.youtube.com/watch?v=fx2Z5ZD_Rbo",
-                  "percent": 73,
-                  "hz": "360hz"
-              },
-
-
-
-          ],
-          "name": "Shotty Abyss Of Darkness",
-          "author": "1SimpleWord",
-          "more": "none",
-          "id": 72742454,
-          "pass": "None",
-          "percentToQualify": 69,
-          "verificationVid": "https://www.youtube.com/watch?v=ttCIxcnesxE",
-      },
-    {
+      {
 
           "vids": [
                 {
@@ -621,6 +595,59 @@ const d = {
           "percentToQualify": 45,
           "verificationVid": "https://www.youtube.com/watch?v=0pCHyx2Ajzw",
       },
+     {
+
+          "vids": [
+            
+          ],
+          "name": "Shotty Catalyze",
+          "author": "GAY",
+          "more": "None",
+          "id": 128633183,
+          "pass": "Free copy",
+          "percentToQualify": 72,
+          "verificationVid": "https://medal.tv/games/geometry-dash/clips/lAEW4nrRwL-HkeRpG?invite=cr-MSw4TGksNDg0MjMxNDM5",
+      },
+    {
+
+          "vids": [
+           {
+                  "user": "Sno_fi",
+                  "link": "https://www.youtube.com/watch?v=fx2Z5ZD_Rbo",
+                  "percent": 100,
+                  "hz": "360hz"
+              },
+            {
+                  "user": "Coboll",
+                  "link": "https://www.youtube.com/watch?v=fx2Z5ZD_Rbo",
+                  "percent": 100,
+                  "hz": "360hz"
+              },
+            {
+                  "user": "Andrew14916",
+                  "link": "https://youtu.be/oQi6KbHxDEE",
+                  "percent": 100,
+                  "hz": "360hz"
+              },
+             {
+                  "user": "Darksonic777",
+                  "link": "https://www.youtube.com/watch?v=fx2Z5ZD_Rbo",
+                  "percent": 73,
+                  "hz": "360hz"
+              },
+
+
+
+          ],
+          "name": "Shotty Abyss Of Darkness",
+          "author": "1SimpleWord",
+          "more": "none",
+          "id": 72742454,
+          "pass": "None",
+          "percentToQualify": 69,
+          "verificationVid": "https://www.youtube.com/watch?v=ttCIxcnesxE",
+      },
+  
  {
 
           "vids": [
@@ -652,8 +679,6 @@ const d = {
           "percentToQualify": 56,
           "verificationVid": "https://www.youtube.com/watch?v=pJmViliNNA4",
       },
-
-
 
   ],
 
