@@ -329,7 +329,7 @@ const d = {
           "vids": [
             
           ],
-          "name": "Shotty Molten COre",
+          "name": "Shotty Molten Core",
           "author": "Coboll",
           "more": "None",
           "id": 136970664,
