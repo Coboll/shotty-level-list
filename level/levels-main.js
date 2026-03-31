@@ -555,6 +555,12 @@ const d = {
                   "percent": 100,
                   "hz": "240hz"
               },
+            {
+                  "user": "Andrew14916",
+                  "link": "https://www.youtube.com/watch?v=fx2Z5ZD_Rbo",
+                  "percent": 100,
+                  "hz": "360hz"
+              },
             
           ],
           "name": "Shotty Exens Limit",
