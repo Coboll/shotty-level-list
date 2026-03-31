@@ -324,6 +324,19 @@ const d = {
         "percentToQualify": 63,
         "verificationVid": "https://youtu.be/qQwhJEIgwp4",
     },
+    {
+
+          "vids": [
+            
+          ],
+          "name": "Shotty Molten COre",
+          "author": "Coboll",
+          "more": "None",
+          "id": 136970664,
+          "pass": "Free copy",
+          "percentToQualify": 63,
+          "verificationVid": "https://www.youtube.com/watch?v=6Sy5lpW-YmA",
+      },
      {
 
           "vids": [
