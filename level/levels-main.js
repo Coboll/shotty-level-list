@@ -282,25 +282,6 @@ const d = {
       },
     {
 
-        "vids": [
-            {
-                  "user": "Andrew14916",
-                  "link": "https://youtu.be/IJ1HMdpLQ_w",
-                  "percent": 100,
-                  "hz": "240hz"
-              },
-
-        ],
-        "name": "Shotty Aerial Gleam",
-        "author": "Coboll",
-        "more": "free copy",
-        "id": 100684090,
-        "pass": "None",
-        "percentToQualify": 63,
-        "verificationVid": "https://youtu.be/qQwhJEIgwp4",
-    },
-    {
-
           "vids": [
             {
                   "user": "Coboll",
@@ -324,6 +305,25 @@ const d = {
           "percentToQualify": 59,
           "verificationVid": "https://www.youtube.com/watch?v=yo-w5iF7JHg",
       },
+    {
+
+        "vids": [
+            {
+                  "user": "Andrew14916",
+                  "link": "https://youtu.be/IJ1HMdpLQ_w",
+                  "percent": 100,
+                  "hz": "240hz"
+              },
+
+        ],
+        "name": "Shotty Aerial Gleam",
+        "author": "Coboll",
+        "more": "free copy",
+        "id": 100684090,
+        "pass": "None",
+        "percentToQualify": 63,
+        "verificationVid": "https://youtu.be/qQwhJEIgwp4",
+    },
      {
 
           "vids": [
