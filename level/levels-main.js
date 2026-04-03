@@ -247,32 +247,6 @@ const d = {
           "verificationVid": "https://youtu.be/FtAdoW4U5Aw",
       },
 
-
-     {
-
-          "vids": [
-            {
-                  "user": "Coboll",
-                  "link": "https://www.youtube.com/watch?v=SbIwHc8HA8I",
-                  "percent": 100,
-                  "hz": "360hz"
-              },
-            {
-                  "user": "SirenSkull",
-                  "link": "https://youtu.be/lE96VpH56YE",
-                  "percent": 100,
-                  "hz": "360hz"
-              },
-
-          ],
-          "name": "Shotty Crystal",
-          "author": "Andrew14916",
-          "more": "None",
-          "id": 83943778,
-          "pass": "No copy",
-          "percentToQualify": 53,
-          "verificationVid": "https://www.youtube.com/watch?v=t9uCQmHb608",
-      },
     {
 
           "vids": [
@@ -304,6 +278,31 @@ const d = {
           "pass": "No copy",
           "percentToQualify": 58,
           "verificationVid": "https://www.youtube.com/watch?v=AV_41Lv3dQo",
+      },
+         {
+
+          "vids": [
+            {
+                  "user": "Coboll",
+                  "link": "https://www.youtube.com/watch?v=SbIwHc8HA8I",
+                  "percent": 100,
+                  "hz": "360hz"
+              },
+            {
+                  "user": "SirenSkull",
+                  "link": "https://youtu.be/lE96VpH56YE",
+                  "percent": 100,
+                  "hz": "360hz"
+              },
+
+          ],
+          "name": "Shotty Crystal",
+          "author": "Andrew14916",
+          "more": "None",
+          "id": 83943778,
+          "pass": "No copy",
+          "percentToQualify": 53,
+          "verificationVid": "https://www.youtube.com/watch?v=t9uCQmHb608",
       },
     {
 
