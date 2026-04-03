@@ -221,6 +221,31 @@ const d = {
           "percentToQualify": 59,
           "verificationVid": "https://www.youtube.com/watch?v=cm7pUyRuDBc",
       },
+        {
+
+          "vids": [
+            {
+                  "user": "GAY",
+                  "link": "https://youtu.be/vv0I14UCFzo",
+                  "percent": 100,
+                  "hz": "360hz"
+              },
+            {
+                  "user": "Coboll",
+                  "link": "https://www.youtube.com/watch?v=fx2Z5ZD_Rbo&t=1s",
+                  "percent": 100,
+                  "hz": "360hz"
+              },
+
+          ],
+          "name": "Shotty Devil Vortex",
+          "author": "Andrew14916",
+          "more": "None",
+          "id": 137214227,
+          "pass": "no copy",
+          "percentToQualify": 58,
+          "verificationVid": "https://youtu.be/FtAdoW4U5Aw",
+      },
 
 
      {
