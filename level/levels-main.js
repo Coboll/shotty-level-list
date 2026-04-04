@@ -99,7 +99,7 @@ const d = {
           "id": 129002510,
           "pass": "Free copy",
           "percentToQualify": 65,
-          "verificationVid": "https://medal.tv/games/geometry-dash/clips/lDRY9NsMkIWbhqbbC?invite=cr-MSxWaGUsNDg0MjMxNDM5&v=172",
+          "verificationVid": "https://youtu.be/yUe2qknTxmY",
       },
     {
 
