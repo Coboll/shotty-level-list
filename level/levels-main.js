@@ -83,6 +83,24 @@ const d = {
           "percentToQualify": 57,
           "verificationVid": "https://www.youtube.com/watch?v=ICjGkKikkRY",
       },
+     {
+
+          "vids": [
+             {
+                  "user": "Andrew14916",
+                  "link": "https://youtu.be/puLFCQ1X1is",
+                  "percent": 100,
+                  "hz": "240hz"
+              },
+          ],
+          "name": "Shotty Hard Mashine",
+          "author": "GAY",
+          "more": "None",
+          "id": 129002510,
+          "pass": "Free copy",
+          "percentToQualify": 65,
+          "verificationVid": "https://medal.tv/games/geometry-dash/clips/lDRY9NsMkIWbhqbbC?invite=cr-MSxWaGUsNDg0MjMxNDM5&v=172",
+      },
     {
 
           "vids": [
@@ -108,19 +126,7 @@ const d = {
           "percentToQualify": 47,
           "verificationVid": "https://youtu.be/8zqAkSY88YQ",
       },
-    {
-
-          "vids": [
-            
-          ],
-          "name": "Shotty Hard Mashine",
-          "author": "GAY",
-          "more": "None",
-          "id": 129002510,
-          "pass": "Free copy",
-          "percentToQualify": 65,
-          "verificationVid": "https://medal.tv/games/geometry-dash/clips/lDRY9NsMkIWbhqbbC?invite=cr-MSxWaGUsNDg0MjMxNDM5&v=172",
-      },
+   
       {
 
           "vids": [
@@ -348,10 +354,27 @@ const d = {
         "percentToQualify": 63,
         "verificationVid": "https://youtu.be/qQwhJEIgwp4",
     },
+     {
+
+          "vids": [
+          ],
+          "name": "Shotty Fever Dream",
+          "author": "Andrew14916",
+          "more": "None",
+          "id": 137214341,
+          "pass": "Free copy",
+          "percentToQualify": 58,
+          "verificationVid": "https://www.youtube.com/watch?v=b4X8fxlF558",
+      },
     {
 
           "vids": [
-            
+               {
+                  "user": "Andrew14916",
+                  "link": "https://youtu.be/puLFCQ1X1is",
+                  "percent": 100,
+                  "hz": "240hz"
+              },
           ],
           "name": "Shotty Molten Core",
           "author": "Coboll",
@@ -647,7 +670,12 @@ const d = {
      {
 
           "vids": [
-            
+               {
+                "user": "Andrew14916",
+                "link": "https://youtu.be/puLFCQ1X1is",
+                "percent": 100,
+                "hz": "240hz"
+            },
           ],
           "name": "Shotty Catalyze",
           "author": "GAY",
